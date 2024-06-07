@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
-from getdata import data_extract
+from getdata import fetch_extended_data
 
 def rsi(prices, period=14):
     deltas = np.diff(prices)
@@ -43,5 +43,6 @@ if __name__ == "__main__":
     ##Set the data parameters
     ticker='JSWENERGY.NS'
     type='Close'
-    data=data_extract(ticker,type)
+    period=14;
+    data=fetch_extended_data(ticker,type,period)
     print(rsi(data))
