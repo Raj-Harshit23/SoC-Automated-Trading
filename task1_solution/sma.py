@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from getdata import fetch_extended_data
 
-def calculate_SMAs(prices, short_window=20, long_window=50):
+def SMAs(prices, short_window=20, long_window=50):
     short_ma = prices.rolling(window=short_window).mean()
     long_ma = prices.rolling(window=long_window).mean()
 
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_columns', None)
-    print(calculate_SMAs(data))
+    print(SMAs(data))
 
 
 
