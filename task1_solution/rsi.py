@@ -3,7 +3,7 @@ import numpy as np
 import datetime
 from getdata import fetch_extended_data
 
-def rsi(prices, period=14):
+def RSI(prices, period=14):
     deltas = np.diff(prices)
     seed = deltas[:period]        #initial period
     print(deltas.size)
@@ -45,4 +45,4 @@ if __name__ == "__main__":
     type='Close'
     period=14;
     data=fetch_extended_data(ticker,type,period)
-    print(rsi(data))
+    print(RSI(data))

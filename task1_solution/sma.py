@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from getdata import fetch_extended_data
+from getdata import fetch_extended_data  
 
 def SMAs(prices, short_window=20, long_window=50):
     short_ma = prices.rolling(window=short_window).mean()

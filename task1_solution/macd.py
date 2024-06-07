@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 import datetime
 from getdata import fetch_extended_data
-from sma import calculate_SMAs
+from sma import SMAs
 
 def EMA(prices,period):
-    initial_sma=calculate_SMAs(prices,period)[0]
+    initial_sma=SMAs(prices,period)[0]
     # print(initial_sma.size)     
     ema=pd.Series(np.zeros_like(prices),index=prices.index) #initialising
 
@@ -21,7 +21,6 @@ def MACD(prices, fast=12, slow=26, signal=9):
     ema_slow=EMA(prices,slow)
 
     macd_line=ema_fast-ema_slow
-
     signal_line=EMA(macd_line,signal)
 
     hist=macd_line-signal_line
@@ -38,3 +37,4 @@ if __name__ == "__main__":
     # print(EMA(data,12))
     print("-----")
     print(MACD(data))
+    
