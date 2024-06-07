@@ -6,9 +6,9 @@ from getdata import fetch_extended_data
 def RSI(prices, period=14):
     deltas = np.diff(prices)
     seed = deltas[:period]        #initial period
-    print(deltas.size)
-    print(prices.size)
-    print(seed.size)
+    # print(deltas.size)
+    # print(prices.size)
+    # print(seed.size)
     up = seed[seed >= 0].sum()
     down = -seed[seed < 0].sum()
     rs = up / down
