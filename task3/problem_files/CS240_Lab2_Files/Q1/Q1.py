@@ -194,7 +194,7 @@ if __name__ == '__main__':
 
     
     # Code to find e_star: the epoch after which test error starts increasing
-    '''
+
     for e_star in range(len(test_err)-1):
         if test_err[e_star+1] > test_err[e_star]:
             break;
@@ -205,7 +205,7 @@ if __name__ == '__main__':
     plt.xlabel("iterations")
     plt.ylabel("test error")
     plt.show()
-    '''
+
 
     #####
 
